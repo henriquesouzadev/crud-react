@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import States from './components/States';
+import Cities from './components/Cities';
 
 function App() {
+
+  const [active, setActive] = React.useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="menu">
+        <button onClick={() => setActive('state')}>Cadastrar Estado</button>
+        <button onClick={() => setActive('city')}>Cadastrar Cidade</button>
+      </div>
+
+      {active === 'state' && <States />}
+      {active === 'city' && <Cities />}
     </div>
   );
 }

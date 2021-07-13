@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   outline: none;
+   border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+   cursor: pointer;
+   font-weight: 500;
+   font-size: .9rem;
+   color: #fff;
+   background: #7e82ff;
+   padding: .8rem 2rem;
+   border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {   
+   max-width: 700px;
+   margin: 0 auto;
+   padding: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* MENU */
+.menu {
+   display: flex;
+   gap: 30px;
+}
+.menu button {
+   flex: 1;
+   font-weight: 700;
+   font-size: 1.2rem;
+   padding: 2rem 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* FORM */
+form {
+   margin-top: 2.5rem;
+   padding: 2rem;
+   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .title { margin-bottom: 1rem; }
+
+form .form-row { display: flex; }
+form .form-row .form-group { margin-right: 1rem; }
+form .form-group { margin-bottom: 1rem; }
+
+form label {
+   display: block;
+   font-weight: 600;
+}
+
+form input,
+form select {
+   padding: .8rem .8rem;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+form .alert {
+   font-weight: 600;
+   font-size: 1rem;
+   color: #f00;
+   margin-top: 1rem;
+}
+
+/* LIST */
+.list { margin-top: 3rem; }
+.list .item {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 1rem;
+   padding-bottom: .6rem;
+   border-bottom: 1px solid #ccc;
 }

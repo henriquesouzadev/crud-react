@@ -1,0 +1,16 @@
+{
+  "states": [
+    {
+      "name": "RJ",
+      "id": 1
+    }
+  ],
+  "cities": [
+    {
+      "name": "Rio de Janeiro",
+      "nameState": "RJ",
+      "idState": 1,
+      "id": 1
+    }
+  ]
+}
