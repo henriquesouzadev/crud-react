@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Install json-server
+
+### `npm install json-server`
+
+The API URL is configured to localhost:3005
+
 ## Available Scripts
 
 In the project directory, you can run:

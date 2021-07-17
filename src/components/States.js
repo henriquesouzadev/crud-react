@@ -1,15 +1,18 @@
 import React from 'react'
 
 const States = () => {
-
+   const API_URL = 'http://localhost:3005'
    const [state, setState] = React.useState('');
    const [alert, setAlert] = React.useState([]);
    const [listStates, setListStates] = React.useState([]);
 
-   React.useEffect(async () => {
-      let response = await fetch('http://localhost:3001/states', { method: 'GET' });
-      let json = await response.json();
-      setListStates(json)
+   React.useEffect(() => {
+      async function fetchStates() {
+         const response = await fetch(`${API_URL}/states`, { method: 'GET' });
+         const json = await response.json();
+         setListStates(json)
+      }
+      fetchStates();
    }, [alert]);
 
    const handleSubmitState = async (e) => {
@@ -22,7 +25,7 @@ const States = () => {
          if (regex.test(state) === false) throw new Error('Usar 2 caracteres, somente letras e maiúsculas');
          if (!state) throw new Error('Preencha a UF');
 
-         let response = await fetch('http://localhost:3001/states', {
+         let response = await fetch(`${API_URL}/states`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json'
@@ -38,11 +41,11 @@ const States = () => {
 
    const handleDelete = async (id) => {
       try {
-         const response = await fetch(`http://localhost:3001/states/${id}`, {
+         const response = await fetch(`${API_URL}/states/${id}`, {
             method: 'DELETE',
          });
          const json = await response.json();
-         json.name !== '' && setAlert({ status: "ok", message: "Cadastrado com sucesso!" })
+         json.name !== '' && setAlert({ status: "ok", message: "Deletado com sucesso!" })
       } catch (e) {
          setAlert({ status: "error", message: e.message });
       }
